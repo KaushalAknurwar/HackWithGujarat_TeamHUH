@@ -1,0 +1,114 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dark academic theme inspired by 3Blue1Brown */
+    --background: 220 20% 10%;
+    --foreground: 220 10% 98%;
+
+    --card: 220 15% 16%;
+    --card-foreground: 220 10% 98%;
+
+    --popover: 220 25% 12%;
+    --popover-foreground: 220 10% 98%;
+
+    --primary: 250 70% 60%;
+    --primary-foreground: 220 10% 98%;
+
+    --secondary: 225 30% 20%;
+    --secondary-foreground: 220 10% 98%;
+
+    --muted: 220 15% 25%;
+    --muted-foreground: 220 10% 70%;
+
+    --accent: 265 60% 60%;
+    --accent-foreground: 220 10% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 20%;
+    --input: 215 15% 20%;
+    --ring: 265 60% 60%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 220 20% 8%;
+    --sidebar-foreground: 220 10% 98%;
+    --sidebar-primary: 250 70% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 20% 12%;
+    --sidebar-accent-foreground: 220 10% 98%;
+    --sidebar-border: 220 20% 15%;
+    --sidebar-ring: 250 70% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Add math symbols background pattern */
+.math-pattern-background {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-position: -15px -15px;
+}
+
+/* Gradient text effect */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400;
+  animation: gradient-move 8s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Animation for subtle pulse effect */
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s infinite ease-in-out;
+}
+
+/* Loading animation direction */
+.direction-reverse {
+  animation-direction: reverse;
+}
+
+/* Loading animation duration */
+.duration-1000 {
+  animation-duration: 1s;
+}
+.duration-700 {
+  animation-duration: 700ms;
+}
+.duration-500 {
+  animation-duration: 500ms;
+}
